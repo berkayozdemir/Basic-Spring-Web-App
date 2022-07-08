@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link rel="stylesheet" href="/assets/css/style2.css">
+
+</head>
+
+<body>
+<div class="wrapper">
+	<form action="/saveDiary" method="post" th:object="${diary}" class="form">
+		<div class="pageTitle title">Sign Up </div>
+		<div class="secondaryTitle title">Please fill this form to sign up.</div>
+		<input type="text" th:field=*{diary_name} class="name formEntry" placeholder="Name" />
+		<input type="text" th:field=*{diary_writed_date} class="email formEntry" placeholder="Email"/>
+		<textarea class="message formEntry" th:field=*{diary_content} placeholder="Message"></textarea>
+		<input type="checkbox" class="termsConditions" value="Term">
+
+		<button class="submit formEntry" onclick="thanks()">Submit</button>
+	</form>
+</div>
+<script src="app.js"></script>
+</body>
+
+</html>
